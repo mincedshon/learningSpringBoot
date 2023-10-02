@@ -1,6 +1,20 @@
 package com.example.demo.Model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Music {
+    @Id
+    @SequenceGenerator(
+            name = "music_sequence",
+            sequenceName = "music_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "music_sequence"
+    )
     private Integer id;
     private String title;
     private String artist;

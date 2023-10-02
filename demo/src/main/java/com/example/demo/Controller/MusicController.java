@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "api/v1/student")
+@RequestMapping(path = "/lala")
 public class MusicController {
 
     private final MusicService musicService;
@@ -28,7 +28,7 @@ public class MusicController {
     };
 
     @GetMapping("/music/{id}")
-    public Music getMusicById(@PathVariable Integer id) {
+    public Optional<Music> getMusicById(@PathVariable Integer id) {
         return musicService.getMusicById(id);
     };
 

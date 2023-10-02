@@ -5,7 +5,7 @@ import com.example.demo.Repository.MusicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;;
+;
 import java.util.List;
 
 @Service
@@ -22,8 +22,8 @@ public class MusicService {
         return musicRepository.findAll();
     }
 
-    public Music getMusicById(Integer id) {
-        if (musicRepository.existsById(id))
-            return musicRepository.getById(id);
+    public <Optional> java.util.Optional<Music> getMusicById(Integer id) {
+        return musicRepository.findMusicById(id);
     }
+
 }
